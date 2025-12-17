@@ -24,6 +24,10 @@ addColumnButton.addEventListener('click', (e) => {
 deleteColumnButton.addEventListener('click', (e) => {
   const columns = document.querySelectorAll('.field tr');
 
+  if (columns[0].children.length <= 2) {
+    return;
+  }
+
   for (const tr of columns) {
     const lastCell = tr.cells[tr.cells.length - 1];
 
@@ -56,6 +60,10 @@ addRowButton.addEventListener('click', (e) => {
 
 deleteRowButton.addEventListener('click', (e) => {
   const rows = document.querySelectorAll('tbody');
+
+  if (rows[0].children.length <= 2) {
+    return;
+  }
 
   for (const rw of rows) {
     const lastRow = rows[0].children[rows[0].children.length - 1];
